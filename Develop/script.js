@@ -1,3 +1,4 @@
+// variable char to be used
 var characters = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -12,7 +13,8 @@ function writePassword() {
   // debugger;
   var rawpassword = "";
   var passwordText = document.querySelector("#password");
-  // var password = generatePassword();
+  // var password = generatePassword(); <--**Don't think this was needed?
+  // password gen. window prompts
   var passwordLength = window.prompt('Submit your password lenght, between 8 and 128 characters.');
   var lowercaseConfirm = window.confirm('Do you want lowercase letters?');
   if (lowercaseConfirm) {
@@ -34,7 +36,7 @@ function writePassword() {
     window.alert("You added numbers.");
     rawpassword += characters.number;
   }
-
+// Password gen. reset if no selections made!
   if (!lowercaseConfirm && !uppercaseConfirm && !symbolConfirm && !numberConfirm) {
     window.alert("You must make at least one character type selection. Please try again!");
     return writePassword();
