@@ -24,8 +24,8 @@ function writePassword() {
       window.alert("You added uppercase letters.");
     rawpassword += characters.uppercase;
   }
-  var symboleConfirm = window.confirm('Do you want symbols?');
-  if (symboleConfirm) {
+  var symbolConfirm = window.confirm('Do you want symbols?');
+  if (symbolConfirm) {
       window.alert("You added symbols.");
     rawpassword += characters.symbol;
   }
@@ -33,6 +33,11 @@ function writePassword() {
   if (numberConfirm) {
     window.alert("You added numbers.");
     rawpassword += characters.number;
+  }
+
+  if (!lowercaseConfirm && !uppercaseConfirm && !symbolConfirm && !numberConfirm) {
+    window.alert("You must make at least one character type selection. Please try again!");
+    return writePassword();
   }
 
   var password = "";
@@ -48,6 +53,7 @@ function generatePassword () {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 // <!--       _
 //        .__(.)< (MEOW)
 //         \___)   
