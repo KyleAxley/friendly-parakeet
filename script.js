@@ -37,7 +37,7 @@ function writePassword() {
     rawpassword += characters.number;
   }
 // Password gen. reset if no selections made!
-  if (!lowercaseConfirm && !uppercaseConfirm && !symbolConfirm && !numberConfirm) {
+  if (!passwordLength && !lowercaseConfirm && !uppercaseConfirm && !symbolConfirm && !numberConfirm) {
     window.alert("You must make at least one character type selection. Please try again!");
     return writePassword();
   }
