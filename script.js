@@ -15,7 +15,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   // var password = generatePassword(); <--**Don't think this was needed?
   // password gen. window prompts
-  var passwordLength = window.prompt('Submit your password lenght, between 8 and 128 characters.');
+  var passwordLength = window.prompt('Submit your password length, between 8 and 128 characters.');
   var lowercaseConfirm = window.confirm('Do you want lowercase letters?');
   if (lowercaseConfirm) {
       window.alert("You added lowercase letters.");

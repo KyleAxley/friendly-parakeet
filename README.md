@@ -9,8 +9,7 @@ Case Western Reserve Web Developement Boot Camp
 *JavaScript
 
 # Website
+https://kyleaxley.github.io/friendly-parakeet/
 
 ## Contribution
 Brought to you by [Kyle Anderson]
-
-
