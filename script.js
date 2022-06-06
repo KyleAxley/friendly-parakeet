@@ -11,24 +11,26 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   // debugger;
+  var passwordLength = window.prompt('Submit your desired password length');
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("You must enter a length between 8 and 128 characters.");
+    return writePassword();
+  }
   var rawpassword = "";
   var passwordText = document.querySelector("#password");
-  // var password = generatePassword(); <--**Don't think this was needed?
-  // password gen. window prompts
-  var passwordLength = window.prompt('Submit your desired password length');
-  
+  // Confirmation prompts...
   var lowercaseConfirm = window.confirm('Do you want lowercase letters?');
   if (lowercaseConfirm) {
-      window.alert("You added lowercase letters.");
+    window.alert("You added lowercase letters.");
     rawpassword += characters.lowercase;
   }
   else {
     window.alert("You did not select lowercase letters.")
   };
-  
+
   var uppercaseConfirm = window.confirm('Do you want uppercase letters?');
   if (uppercaseConfirm) {
-      window.alert("You added uppercase letters.");
+    window.alert("You added uppercase letters.");
     rawpassword += characters.uppercase;
   }
   else {
@@ -37,7 +39,7 @@ function writePassword() {
 
   var symbolConfirm = window.confirm('Do you want symbols?');
   if (symbolConfirm) {
-      window.alert("You added symbols.");
+    window.alert("You added symbols.");
     rawpassword += characters.symbol;
   }
   else {
@@ -54,7 +56,7 @@ function writePassword() {
   };
 
 
-// Password gen. reset if no selections made!
+  // Password gen. reset if no selections made!
   if (!lowercaseConfirm && !uppercaseConfirm && !symbolConfirm && !numberConfirm) {
     window.alert("You must make at least one character type selection. Please try again!");
     return writePassword();
@@ -68,7 +70,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-function generatePassword () {
+function generatePassword() {
   writePassword();
 }
 // Add event listener to generate button
@@ -76,5 +78,5 @@ generateBtn.addEventListener("click", writePassword);
 
 // <!--       _
 //        .__(.)< (MEOW)
-//         \___)   
+//         \___)
 //  ~~~~~~~~~~~~~~~~~~-->
